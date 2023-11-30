@@ -40,12 +40,30 @@ const dragonball = [
 
 ]
 
-/* console.log(personaggi[0].nome)
- */
-
 for (let i = 0; i < dragonball.length; i++) {
 
     const caracter = dragonball[i];
-    console.log(caracter)
 
-} 
+
+    console.log(`caracter ${i+1}`)
+    for (let key in caracter) {
+
+        console.log(`${key}: ${caracter[key]}`)
+        //console.log(caracter[key])
+    }
+
+    console.log('---');
+
+
+
+
+
+
+
+
+
+    /*  document.getElementById('sis').innerHTML = dragonball[0].nome
+
+        document.getElementById('tot').innerHTML = caracter[key] */
+}
+
