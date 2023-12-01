@@ -53,15 +53,9 @@ for (let i = 0; i < dragonball.length; i++) {
     }
 
 
-    /* <ul id="dragonball">
-        <li class="caracter">
-            <div class="img">img</div>
-            <h3 class="name">nome</h3>
-            <p class="forza">forza</p>
-        </li>
-    </ul> */
+    //template literal**************************************
 
-    const ulContainer = document.getElementById('dragonball')
+    /* const ulContainer = document.getElementById('dragonball')
     for (let i = 0; i < dragonball.length; i++) {
         const caracter = dragonball[i];
 
@@ -71,7 +65,50 @@ for (let i = 0; i < dragonball.length; i++) {
         <h3 class="name">${caracter.nome}</h3>
         <p class="forza">${caracter.forza}</p>
         </li>`
-        ulContainer.innerHTML+=liElement
+        ulContainer.innerHTML+=liElement 
+        
+        *******************************************************/
+
+
+
+    // create element*************************************************
+    /* */
+    const ulContainer = document.getElementById('dragonball')
+    for (let i = 0; i < dragonball.length; i++) {
+        const caracter = dragonball[i];
+
+        const liElement = document.createElement('li');
+        liElement.classList.add('caracter');
+
+
+        const imageContainer = document.createElement('div');
+        imageContainer.classList.add('img');
+        imageContainer.innerHTML = caracter.foto;
+        liElement.append(imageContainer);
+
+
+        const nameContainer = document.createElement('h3');
+        nameContainer.classList.add('name');
+        nameContainer.innerHTML = caracter.nome;
+        liElement.append(nameContainer);
+
+        const forzaContainer = document.createElement('p');
+        forzaContainer.classList.add('forza');
+        forzaContainer.innerHTML = caracter.forza;
+        liElement.append(forzaContainer);
+
+        ulContainer.append(liElement)
+
+
+        /*  
+         `<li class="caracter">
+         <div class="img">${caracter.foto}</div>
+         <h3 class="name">${caracter.nome}</h3>
+         <p class="forza">${caracter.forza}</p>
+         </li>` */
+
 
     }
+
+
 }
