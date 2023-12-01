@@ -45,25 +45,33 @@ for (let i = 0; i < dragonball.length; i++) {
     const caracter = dragonball[i];
 
 
-    console.log(`caracter ${i+1}`)
+    console.log(`caracter ${i + 1}`)
     for (let key in caracter) {
 
         console.log(`${key}: ${caracter[key]}`)
         //console.log(caracter[key])
     }
 
-    console.log('---');
 
+    /* <ul id="dragonball">
+        <li class="caracter">
+            <div class="img">img</div>
+            <h3 class="name">nome</h3>
+            <p class="forza">forza</p>
+        </li>
+    </ul> */
 
+    const ulContainer = document.getElementById('dragonball')
+    for (let i = 0; i < dragonball.length; i++) {
+        const caracter = dragonball[i];
 
+        const liElement = 
+        `<li class="caracter">
+        <div class="img">${caracter.foto}</div>
+        <h3 class="name">${caracter.nome}</h3>
+        <p class="forza">${caracter.forza}</p>
+        </li>`
+        ulContainer.innerHTML+=liElement
 
-
-
-
-
-
-    /*  document.getElementById('sis').innerHTML = dragonball[0].nome
-
-        document.getElementById('tot').innerHTML = caracter[key] */
+    }
 }
-
